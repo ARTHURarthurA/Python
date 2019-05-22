@@ -18,7 +18,20 @@ def display(tree): #In Order traversal of the tree
         display(tree.right)
 
     return
+def pre_order_display(tree): #pre order traversal of the tree by myself
 
+    if tree is None: 
+       return
+    
+    print(tree.data)
+
+    if tree.left is not None:
+        display(tree.left)
+
+    if tree.right is not None:
+        display(tree.right)
+
+    return
 def depth_of_tree(tree): #This is the recursive function to find the depth of binary tree.
     if tree is None:
         return 0
@@ -57,6 +70,8 @@ def main(): # Main func for testing.
     print(depth_of_tree(tree))
     print("Tree is: ")
     display(tree)
+    print("pre_order_traversal_tree is ")
+    pre_order_display(tree)
 
 
 if __name__ == '__main__':
